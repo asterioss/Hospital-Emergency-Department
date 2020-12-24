@@ -13,9 +13,10 @@ public class Main {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(
 			url + ":" + port + "/" + databaseName + "?characterEncoding=UTF-8", username, password);
+			System.out.println("Connected");
 		}
 		catch(Exception E) {
-			
+			System.out.println(E);
 		}
 		
 	}
