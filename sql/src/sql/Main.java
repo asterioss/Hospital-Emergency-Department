@@ -20,7 +20,6 @@ public class Main {
 			String insertEmployee = new String("insert into employee "
 					+ " (first_name, last_name, email, mobile)"
 			        + " values ('george', 'papadopoulos', 'ekei@gmail.com', 697827029)");
-			
 			stmt.executeUpdate(insertEmployee);
 			System.out.println("Insert Employee Completed");
 			
