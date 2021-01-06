@@ -1,7 +1,7 @@
-package sql;
+package employees;
 import java.sql.*;
 
-public class Main {
+public class Employee {
 	public static void main(String[] args) {
 		String url = new String("jdbc:mysql://localhost");
 		String databaseName = new String("test");
