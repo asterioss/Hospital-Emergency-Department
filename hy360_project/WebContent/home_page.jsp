@@ -98,13 +98,14 @@ button {
                " asfalistikos_foreas VARCHAR(100) not NULL, " + 
                " xronia_nosimata VARCHAR(300) DEFAULT NULL, " + 
                " plhrofories_prohgoumenwn_episkepsewn VARCHAR(300) DEFAULT NULL, " +
+               " symptoms VARCHAR(300) not NULL, " +
                " PRIMARY KEY ( amka ))");
 	
-	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (12312312,'Giorgos Giorgou','Kentro','efka','epilipsia','23/12/2020-phre farmakeutikh agwgh')");
-	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (31231231,'Mixalis Leontas','Therisos','oga','diavitis','12/11/2020-programmatismeno checkup')");
-	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (53523123,'Kostas Konstantinou','Amnisos','ika',' ','11/04/2020-eksetasi sta epeigonta-phre agwgh')");
-	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (57234543,'Makis Leontas','Kentro','ika',' ','19/04/2020-eksetasi sta epeigonta-aplo kruologhma')");
-	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (12347536,'Tasos Magkas','Kentro','ika','kardiaki aneparkeia','12/01/2021-miniaio checkup-agwgh paramenei idia')");
+	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (12312312,'Giorgos Giorgou','Kentro','efka','epilipsia','23/12/2020-phre farmakeutikh agwgh','ponokefalos')");
+	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (31231231,'Mixalis Leontas','Therisos','oga','diavitis','12/11/2020-programmatismeno checkup','ponolaimos')");
+	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (53523123,'Kostas Konstantinou','Amnisos','ika',' ','11/04/2020-eksetasi sta epeigonta-phre agwgh','pyretos')");
+	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (57234543,'Makis Leontas','Kentro','ika',' ','19/04/2020-eksetasi sta epeigonta-aplo kruologhma','pyretos')");
+	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (12347536,'Tasos Magkas','Kentro','ika','kardiaki aneparkeia','12/01/2021-miniaio checkup-agwgh paramenei idia','ponos')");
 	
 	
 	/*myRs = myStmt.executeQuery("select * from dedomena_asthenwn");

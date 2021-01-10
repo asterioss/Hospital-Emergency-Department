@@ -6,16 +6,29 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Eksetasi apo Giatro</title>
+<style>
+ input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+ }
+</style>
 </head>
+<%
+  String name = request.getParameter("name");
+  out.println("O asthenis " +name+ " eisilthe sto TEP.");
+%>
 <body>
+ <br><br><label for="diagnosis"><b>Diagnosis</b></label>
+  <input type="text" placeholder="Enter Diagnosis" name="diagnosis" id="diagnosis" required>
 
 </body>
 </html>
 
-<%
- String name = request.getParameter("name");
- out.println(name);
- 
+<% 
  String url = new String("jdbc:mysql://localhost");
  String databaseName = new String("test");
  int port = 3306;

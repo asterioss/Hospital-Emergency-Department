@@ -35,19 +35,21 @@
 		response.sendRedirect("patient.html");
     } else {
     	System.out.println("Den uparxei o asthenis.");
-    	insert = con.prepareStatement("insert into dedomena_asthenwn(amka,onomatepwnumo,dieuthinsi,asfalistikos_foreas,xronia_nosimata,plhrofories_prohgoumenwn_episkepsewn)" +
-    	"values(?,?,?,?,?,?)");
+    	insert = con.prepareStatement("insert into dedomena_asthenwn(amka,onomatepwnumo,dieuthinsi,asfalistikos_foreas,xronia_nosimata,plhrofories_prohgoumenwn_episkepsewn,symptoms)" +
+    	"values(?,?,?,?,?,?,?)");
     	insert.setString(1, amkaa);
     	insert.setString(2, fullname);
     	insert.setString(3, addr);
     	insert.setString(4, asff);
     	insert.setString(5, "");
     	insert.setString(6, "");
+    	insert.setString(7, symptom);
     	
     	insert.executeUpdate();
     	System.out.println("O asthenis "+fullname+" prostethike me epituxia.");
-    	response.sendRedirect("patient.html");
     	insert.close();
+    	response.sendRedirect("patient.html");
+    	
     }
 	
  }
