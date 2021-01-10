@@ -35,6 +35,7 @@
 		response.sendRedirect("patient.html");
     } else {
     	System.out.println("Den uparxei o asthenis.");
+    	
     	insert = con.prepareStatement("insert into dedomena_asthenwn(amka,onomatepwnumo,dieuthinsi,asfalistikos_foreas,xronia_nosimata,plhrofories_prohgoumenwn_episkepsewn,symptoms)" +
     	"values(?,?,?,?,?,?,?)");
     	insert.setString(1, amkaa);
@@ -47,7 +48,6 @@
     	
     	insert.executeUpdate();
     	System.out.println("O asthenis "+fullname+" prostethike me epituxia.");
-    	insert.close();
     	response.sendRedirect("patient.html");
     	
     }
@@ -57,6 +57,7 @@
 	System.out.println(e);
  } finally {
 	rs.close();
+	insert.close();
 	stmt.close();
 	con.close();
  }
