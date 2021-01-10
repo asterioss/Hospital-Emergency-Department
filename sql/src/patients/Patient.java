@@ -16,14 +16,16 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
-public class Ekei extends JFrame {
+public class Patient extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField name;
 	private JTextField amka;
 	private JTextField addr;
 	private JTextField dis;
+	private JLabel lblPatientExamination;
 
 	/**
 	 * Launch the application.
@@ -32,7 +34,7 @@ public class Ekei extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Ekei frame = new Ekei();
+					Patient frame = new Patient();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,14 +46,15 @@ public class Ekei extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ekei() {
+	public Patient() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 323);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JLabel lblFullaname = new JLabel("fullname");
+		JLabel lblFullaname = new JLabel("Fullname");
+		lblFullaname.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		name = new JTextField();
 		name.setColumns(10);
@@ -63,15 +66,19 @@ public class Ekei extends JFrame {
 		addr.setColumns(10);
 		
 		JLabel lblAddress = new JLabel("AMKA");
+		lblAddress.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
-		JLabel lblFullaname_1_1 = new JLabel("address");
+		JLabel lblFullaname_1_1 = new JLabel("Address");
+		lblFullaname_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
-		JLabel lblFullaname_1_1_1 = new JLabel("chronic diseases");
+		JLabel lblFullaname_1_1_1 = new JLabel("Chronic Diseases");
+		lblFullaname_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		dis = new JTextField();
 		dis.setColumns(10);
 		
 		JButton btnInsertPatient = new JButton("Insert Patient");
+		btnInsertPatient.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnInsertPatient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String fullname = name.getText();
@@ -112,68 +119,64 @@ public class Ekei extends JFrame {
 				}
 			}
 		});
+		
+		lblPatientExamination = new JLabel("Patient Examination");
+		lblPatientExamination.setFont(new Font("Tahoma", Font.BOLD, 18));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(6)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblFullaname_1_1_1, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(6)
-							.addComponent(lblAddress, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-							.addGap(47)
-							.addComponent(amka, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(3)
-							.addComponent(lblFullaname, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-							.addGap(49)
-							.addComponent(name, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(2)
-							.addComponent(lblFullaname_1_1, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-							.addGap(54)
-							.addComponent(addr, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(121)
-							.addComponent(btnInsertPatient, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(1)
-							.addComponent(lblFullaname_1_1_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-							.addGap(23)
-							.addComponent(dis, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(169, Short.MAX_VALUE))
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblAddress, GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+								.addComponent(lblFullaname, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE))
+							.addGap(42))
+						.addComponent(lblFullaname_1_1, GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(addr, 150, 150, 150)
+						.addComponent(amka, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+						.addComponent(dis, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+						.addComponent(name, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+					.addGap(133))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(116)
+					.addComponent(lblPatientExamination, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGap(125))
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addGap(125)
+					.addComponent(btnInsertPatient, GroupLayout.PREFERRED_SIZE, 158, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(141, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(lblPatientExamination)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(18)
-							.addComponent(name, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(20)
-							.addComponent(amka, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(14)
-							.addComponent(lblFullaname, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+							.addGap(35)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblFullaname, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+								.addComponent(name, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 							.addGap(15)
-							.addComponent(lblAddress, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)))
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblAddress, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+								.addComponent(addr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(24)
+							.addComponent(amka, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblFullaname_1_1_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+								.addComponent(dis, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(30)
-							.addComponent(lblFullaname_1_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(addr, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(8)))
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(22)
-							.addComponent(dis, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(36)
-							.addComponent(btnInsertPatient))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(17)
-							.addComponent(lblFullaname_1_1_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(13, Short.MAX_VALUE))
+							.addGap(120)
+							.addComponent(lblFullaname_1_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+					.addComponent(btnInsertPatient))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}

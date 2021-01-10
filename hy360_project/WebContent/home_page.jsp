@@ -9,12 +9,33 @@
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 h1 {text-align:center;}
+button {
+  background-color: black;
+  color: white;
+  padding: 4px 10px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+ }
+ .logoutbtn {
+   position:absolute;
+   top:80%;
+ }
 </style>
 </head>
 <body>
 <h1>This is home page!</h1>
  <form action="episkepsi_asthenous/patient.html">
   <button type="submit" class="btn">Episkepsi Asthenous sto TEP</button>
+ </form>
+ 
+ <form action="eksetasi_asthenous/select_patient.jsp">
+  <button type="submit" class="btn">Eksetasi Asthenous apo giatro</button>
+ </form>
+ 
+ <form action="index.html">
+  <button type="submit" class="logoutbtn">Logout</button>
  </form>
 
 </body>
@@ -185,13 +206,13 @@ h1 {text-align:center;}
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Makis Leontas','asthenis')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Tasos Magkas','asthenis')");
 
-	myRs = myStmt.executeQuery("select * from xristes_pliroforiakou_susthmatos");
+	/*myRs = myStmt.executeQuery("select * from xristes_pliroforiakou_susthmatos");
 	System.out.println("\n"+ 
 			"--xristes pliroforiakou susthmatos--"+"\n");
 	while (myRs.next()) {
 		System.out.println(myRs.getString("onoma_xristi_sustimatos") +" | "+ myRs.getString("idiotita_xristi"));
 	}
-	myRs.close();		
+	myRs.close();*/		
 	
  }
  catch(Exception e) {
