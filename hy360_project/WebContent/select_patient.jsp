@@ -87,7 +87,7 @@ select {
     if(myRs.next()) {
        if(name!=null) {
          System.out.println(name);
-         response.sendRedirect("eksetasi.jsp?name=" + name);
+         response.sendRedirect("eksetasi_giatrou.jsp?name=" + name);
        }
     } else {
        if(name!=null) {

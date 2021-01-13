@@ -26,11 +26,11 @@ button {
 </head>
 <body>
 <h1>This is home page!</h1>
- <form action="episkepsi_asthenous/patient.html">
+ <form action="add_patient.jsp">
   <button type="submit" class="btn">Episkepsi Asthenous sto TEP</button>
  </form>
  
- <form action="eksetasi_asthenous/select_patient.jsp">
+ <form action="select_patient.jsp">
   <button type="submit" class="btn">Eksetasi Asthenous apo giatro</button>
  </form>
  
@@ -170,7 +170,6 @@ button {
                " PRIMARY KEY ( onoma_astheneias ))");
 
 	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('katagma')");
-	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('stithagxi')");
 	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('arithmies')");
 	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('covid-19')");
 	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('covid-20')");
