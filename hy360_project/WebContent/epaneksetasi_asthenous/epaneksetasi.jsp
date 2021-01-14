@@ -17,6 +17,11 @@
   cursor: pointer;
   width: 100%;
  }
+ select {
+   padding: 14px 20px;
+   margin: 8px 0;
+   width: 100%;
+ }
 </style>
 </head>
 <body>
@@ -45,8 +50,12 @@ try {
 	
 	if(rs.next()) {
 	   out.println("O asthenis " +name+ " diagnosthike me: " + rs.getString("diagnosis"));
-	   if(rs.getString("farmakeutikh_agwgh")!="") {
-	      out.println(" kai tou xorigithike: " + rs.getString("farmakeutikh_agwgh"));
+	   //System.out.println(rs.getString("farmakeutikh_agwgh"));
+	   if(rs.getString("farmakeutikh_agwgh").equals("")) {
+		  out.println(" kai den tou xorigithike tipota"); 
+	   }
+	   else {
+		  out.println(" kai tou xorigithike: " + rs.getString("farmakeutikh_agwgh")); 
 	   }
 	}
 	else {
@@ -56,7 +65,10 @@ try {
 
 %>
   <br><br><label for="nosileia"><b>Nosileia</b></label><br>
-  <textarea id="nosileia" name="nosileia" rows="5" cols="100"></textarea>
+  <select name="nosileia" id="nosileia">
+    <option value="nai">Nai</option>
+    <option value="oxi">Oxi</option>
+  </select>
   
   <input type="hidden" name="patient_name" value=<%=name%>>
   
@@ -72,8 +84,8 @@ try {
 catch(Exception e) {
 	System.out.println(e);
 } finally {
-	/*rs.close();
+	//rs.close();
 	stmt.close();
-	con.close();*/
+	con.close();
 }
 %>

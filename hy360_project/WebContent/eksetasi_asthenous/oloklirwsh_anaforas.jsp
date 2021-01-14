@@ -20,7 +20,7 @@ button {
 </style>
 </head>
 <body>
-<form action="home_page.jsp" method="post">
+<form action="../home_page.jsp" method="post">
   <h2 style="text-align:center;">H anafora prostethike me epituxia</h2>
   
   <button type="submit" class="hometbtn">Go to Home Page</button>

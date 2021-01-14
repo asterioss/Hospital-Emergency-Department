@@ -20,9 +20,19 @@ button {
 </style>
 </head>
 <body>
-<form action="home_page.jsp" method="post">
-  <h2 style="text-align:center;">H nosileia prostethike me epituxia</h2>
-  
+<form action="../home_page.jsp" method="post">
+<%
+String nosileia = (String)request.getParameter("nosileia");
+String name = (String)request.getParameter("patient_name");
+//System.out.println(name+", "+nosileia);
+if(nosileia.equals("nai")) {
+	out.println("O asthenis "+name+" tha nosileutei");
+}
+else if(nosileia.equals("oxi")) {
+	out.println("O asthenis "+name+" pernei poulo gia to spiti tou");
+} 
+%>
+
   <button type="submit" class="hometbtn">Go to Home Page</button>
   
 </form>
@@ -30,10 +40,6 @@ button {
 </html>
 
 <%
-String nosileia = request.getParameter("nosileia");
-String name = (String)request.getParameter("patient_name");
-System.out.println(name+", "+nosileia);
-
 String url = new String("jdbc:mysql://localhost");
 String databaseName = new String("test");
 int port = 3306;
@@ -47,7 +53,8 @@ try {
 	con = DriverManager.getConnection(
 	url + ":" + port + "/" + databaseName + "?characterEncoding=UTF-8", username, password);
 	
-	//update ton pinaka kai vazoume thn nosileia
+	//an nosileia=nai, tote menei sto nosokomeio
+	//an nosileia=oxi, tote ton diagrafoume apo tous astheneis pou perimenoun
 	/*stmt = con.prepareStatement("update eksetasi_patient set anafora = ? where name = ?");
 	stmt.setString(1, anafora);
 	stmt.setString(2, name);

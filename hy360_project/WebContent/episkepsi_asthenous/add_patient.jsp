@@ -36,7 +36,7 @@
 <body>
 <form action="add_patient.jsp" method="post">
  <h1 style="text-align:center;">Episkepsi Asthenous</h1>
- <a href="home_page.jsp">Home Page</a>
+ <a href="../home_page.jsp">Home Page</a>
  <div class="container" style="padding:16px;">
  <label for="fullname"><b>Username</b></label>
    <input type="text" placeholder="Enter Fullname" name="fullname" id="fullname" required>
@@ -50,10 +50,13 @@
  <label for="asf_for"><b>Asfalistikos Foreas</b></label>
    <input type="text" placeholder="Enter Asfalistiko Forea" name="asf" id="asf" required>
    
+ <label for="nosimata"><b>Asfalistikos Foreas</b></label>
+   <input type="text" placeholder="Enter Xronia Nosimata (if you have)" name="xr_nos" id="xr_nos">
+   
  <label for="symptoms"><b>Choose a Symptom</b></label><br>
   <select name="symptoms" id="symptoms">
     <option value="ponokefalos">Ponokefalos</option>
-    <option value="pyretos">Puretos</option>
+    <option value="puretos">Puretos</option>
     <option value="ponolaimos">Ponolaimos</option>
     <option value="ponos">Ponos</option>
     <option value="provima_sta_matia">Provlima sta matia</option>
@@ -76,6 +79,10 @@
  String amkaa = request.getParameter("amka");
 // System.out.println(amkaa);
  String asff = request.getParameter("asf");
+ String nosimata = " ";
+ if(request.getParameter("xr_nos")!=null) {
+	nosimata = request.getParameter("xr_nos");
+ }
  String symptom = (String)request.getParameter("symptoms");
  
  String url = new String("jdbc:mysql://localhost");
@@ -101,19 +108,20 @@
 	if(rs.next()) {
 		out.println("O asthenis "+fullname+" uparxei.");
 		out.println("<br>");
-		if(rs.getString("xronia_nosimata").equals(" ")) out.println(rs.getString("amka") +" | "+rs.getString("onomatepwnumo") +" | "+ rs.getString("dieuthinsi") +": "+ rs.getString("asfalistikos_foreas"));
-		else out.println(rs.getString("amka") +" | "+rs.getString("onomatepwnumo") +" | "+ rs.getString("dieuthinsi") +": "+ rs.getString("asfalistikos_foreas")+" | "+rs.getString("xronia_nosimata"));
+		if(rs.getString("xronia_nosimata").equals("")) out.println("Amka:"+rs.getString("amka")+" | Onomatepwnumo:"+rs.getString("onomatepwnumo")+" | Dieuthinsi:"+ rs.getString("dieuthinsi")+" | Asfalistikos Foreas:"+ rs.getString("asfalistikos_foreas"));
+		else out.println("Amka:"+rs.getString("amka")+" | Onomatepwnumo:"+rs.getString("onomatepwnumo")+" | Dieuthinsi:"+ rs.getString("dieuthinsi")+" | Asfalistikos Foreas:"+ rs.getString("asfalistikos_foreas")+" | Xronia Nosimata:"+rs.getString("xronia_nosimata"));
 		//response.sendRedirect("add_patient.html");
     } else {
     	System.out.println("Den uparxei o asthenis.");
     	
-    	insert = con.prepareStatement("insert into dedomena_asthenwn(amka,onomatepwnumo,dieuthinsi,asfalistikos_foreas,symptoms)" +
-    	"values(?,?,?,?,?)");
+    	insert = con.prepareStatement("insert into dedomena_asthenwn(amka,onomatepwnumo,dieuthinsi,asfalistikos_foreas,xronia_nosimata,symptoms)" +
+    	"values(?,?,?,?,?,?)");
     	insert.setString(1, amkaa);
     	insert.setString(2, fullname);
     	insert.setString(3, addr);
     	insert.setString(4, asff);
-    	insert.setString(5, symptom);
+    	insert.setString(5, nosimata);
+    	insert.setString(6, symptom);
     	
     	insert.executeUpdate();
     	out.println("O asthenis "+fullname+" prostethike me epituxia.");

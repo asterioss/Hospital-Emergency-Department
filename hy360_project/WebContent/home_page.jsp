@@ -26,15 +26,15 @@ button {
 </head>
 <body>
 <h1>This is home page!</h1>
- <form action="add_patient.jsp">
+ <form action="episkepsi_asthenous/add_patient.jsp">
   <button type="submit" class="btn">Episkepsi Asthenous sto TEP</button>
  </form>
  
- <form action="select_patient.jsp">
+ <form action="eksetasi_asthenous/select_patient.jsp">
   <button type="submit" class="btn">Eksetasi Asthenous apo giatro</button>
  </form>
  
- <form action="select_patient1.jsp">
+ <form action="epaneksetasi_asthenous/select_patient1.jsp">
   <button type="submit" class="btn">Epaneksetasi Asthenous</button>
  </form>
  
@@ -65,7 +65,7 @@ button {
 	myStmt = con.createStatement();
     temp = con.createStatement();
 	
-	temp.executeUpdate("drop table if exists dedomena_prosopikou");
+	//temp.executeUpdate("drop table if exists dedomena_prosopikou");
 	temp.executeUpdate("CREATE TABLE IF NOT EXISTS dedomena_prosopikou " +
                "(onomatepwnumo VARCHAR(100) not NULL, " +
                " epaggelma VARCHAR(20) not NULL," + 
@@ -96,7 +96,7 @@ button {
 	myRs.close();*/
 	
 	// to table me ta dedomena asthenwn kai apo katw ta insertions 
-	temp.executeUpdate("drop table if exists dedomena_asthenwn");
+	//temp.executeUpdate("drop table if exists dedomena_asthenwn");
 	temp.executeUpdate("CREATE TABLE IF NOT EXISTS dedomena_asthenwn " +
                "(amka INTEGER not NULL, " +
                " onomatepwnumo VARCHAR(100) not NULL, " + 
@@ -109,8 +109,8 @@ button {
 	
 	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (12312312,'Giorgos Giorgou','Kentro','efka','epilipsia','23/12/2020-phre farmakeutikh agwgh','ponokefalos')");
 	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (31231231,'Mixalis Leontas','Therisos','oga','diavitis','12/11/2020-programmatismeno checkup','ponolaimos')");
-	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (53523123,'Kostas Konstantinou','Amnisos','ika',' ','11/04/2020-eksetasi sta epeigonta-phre agwgh','pyretos')");
-	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (57234543,'Makis Leontas','Kentro','ika',' ','19/04/2020-eksetasi sta epeigonta-aplo kruologhma','pyretos')");
+	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (53523123,'Kostas Konstantinou','Amnisos','ika',' ','11/04/2020-eksetasi sta epeigonta-phre agwgh','puretos')");
+	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (57234543,'Makis Leontas','Kentro','ika',' ','19/04/2020-eksetasi sta epeigonta-aplo kruologhma','puretos')");
 	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (12347536,'Tasos Magkas','Kentro','ika','kardiaki aneparkeia','12/01/2021-miniaio checkup-agwgh paramenei idia','ponos')");
 	
 	
@@ -125,7 +125,7 @@ button {
 	myRs.close();*/
 	
 	// to table me ta dedomena efimerias kai apo katw ta insertions 
-	temp.executeUpdate("drop table if exists dedomena_efimerias");
+	//temp.executeUpdate("drop table if exists dedomena_efimerias");
 	temp.executeUpdate("CREATE TABLE IF NOT EXISTS dedomena_efimerias " +
                "(arithmos_diathesimwn_giatrwn INTEGER not NULL, " +
                "arithmos_diathesimwn_noshleutwn INTEGER not NULL, " +
@@ -144,7 +144,7 @@ button {
 	myRs.close();*/
 	
 	// to table me tis eksetaseis kai ta farmaka kai apo katw ta insertions
-	temp.executeUpdate("drop table if exists eksetaseis_kai_farmaka");
+	//temp.executeUpdate("drop table if exists eksetaseis_kai_farmaka");
 	temp.executeUpdate("CREATE TABLE IF NOT EXISTS eksetaseis_kai_farmaka " +
                "(onoma_diathesimou_farmakou VARCHAR(50) not NULL, " +
                " tupos_farmakou VARCHAR(15) not NULL, " + 
@@ -174,7 +174,7 @@ button {
 	myRs.close();*/
 	
 	// to table me tis astheneies kai diagnosi kai apo katw ta insertions 
-	temp.executeUpdate("drop table if exists astheneies_kai_diagnosi");
+	//temp.executeUpdate("drop table if exists astheneies_kai_diagnosi");
 	temp.executeUpdate("CREATE TABLE IF NOT EXISTS astheneies_kai_diagnosi " +
                "(onoma_astheneias VARCHAR(30) DEFAULT NULL, " +
                " PRIMARY KEY ( onoma_astheneias ))");
@@ -199,7 +199,7 @@ button {
 	myRs.close();*/
 	
 	// to table me tous xristes tou pliroforiakou susthmatos kai apo katw ta insertions 
-	temp.executeUpdate("drop table if exists xristes_pliroforiakou_susthmatos");
+	//temp.executeUpdate("drop table if exists xristes_pliroforiakou_susthmatos");
 	temp.executeUpdate("CREATE TABLE IF NOT EXISTS xristes_pliroforiakou_susthmatos " +
                "(onoma_xristi_sustimatos VARCHAR(100), " +
                "idiotita_xristi VARCHAR(100), " + 
