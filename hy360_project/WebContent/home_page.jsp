@@ -34,6 +34,10 @@ button {
   <button type="submit" class="btn">Eksetasi Asthenous apo giatro</button>
  </form>
  
+ <form action="select_patient1.jsp">
+  <button type="submit" class="btn">Epaneksetasi Asthenous</button>
+ </form>
+ 
  <form action="index.html">
   <button type="submit" class="logoutbtn">Logout</button>
  </form>
@@ -73,9 +77,11 @@ button {
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Giannis Dicaprio','giatros','ofthalmiatros',1231231231)");
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Maria Koula','nosileutis',' ',1231231231)");
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Asterios Lentzos','upallilos',' ',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Kwstas Mathiou','giatros','psuxiatros',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Mixalis Toutou','giatros','allergiologos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Kwstas Mathiou','giatros','gastrenterologos',1231231231)");
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Aggelos Rosmarakis','giatros','orthopedikos',1231231231)");
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Nikos Nitis','nosileutis',' ',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Giorgos Vamvakousis','giatros','genikos',1231231231)");
 			
 	
 	 //4. Process the result set
@@ -143,17 +149,21 @@ button {
                "(onoma_diathesimou_farmakou VARCHAR(50) not NULL, " +
                " tupos_farmakou VARCHAR(15) not NULL, " + 
                " periektikotita_se_drastiki_ousia INTEGER not NULL, " + 
-               " katallilo_gia VARCHAR(15) not NULL, " +
+               " katallilo_gia VARCHAR(50) not NULL, " +
                " PRIMARY KEY ( onoma_diathesimou_farmakou ))");
 	
 	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('ponstan00','xapi',120,'puretos')");
 	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('ponstan01','siropi',120,'puretos')");
 	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('depon00','xapi',500,'ponokefalos')");
 	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('depon01','siropi',500,'ponokefalos')");
-	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('voltaren00','xapi',480,'flegmones')");
-	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('voltaren01','aloifi',240,'flegmones')");
+	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('artelac','stagones',10,'provlima_sta_matia')");
+	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('arichol','xapi',500,'ponos_stin_kardia')");
 	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('mesulid','xapi',500,'ponos')");
 	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('xanax','xapi',1000,'ponos')");
+	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('xozal','xapi',1000,'allergies')");
+	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('bisolvon00','xapi',150,'ponolaimos')");
+	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('bisolvon01','siropi',150,'ponolaimos')");
+	temp.executeUpdate("INSERT INTO eksetaseis_kai_farmaka " + "VALUES ('prodiac','kapsoula',30,'ponokoilos')");
 	
 	/*myRs = myStmt.executeQuery("select * from eksetaseis_kai_farmaka");
 	System.out.println("\n"+ 
@@ -176,6 +186,8 @@ button {
 	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('gripi')");
 	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('gastrenteritida')");
 	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('kruologhma')");
+	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('allergia')");
+	temp.executeUpdate("INSERT INTO astheneies_kai_diagnosi " + "VALUES ('provlima_orasis')");
 	
 	
 	/*myRs = myStmt.executeQuery("select * from astheneies_kai_diagnosi");
@@ -197,8 +209,11 @@ button {
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Giannis Dicaprio','proswpiko')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Maria Koula','proswpiko')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Asterios Lentzos','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Mixalis Toutou','proswpiko')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Kwstas Mathiou','proswpiko')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Aggelos Rosmarakis','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Nikos Nitis','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Giorgos Vamvakousis','proswpiko')");
 	
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Giorgos Giorgou','asthenis')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Mixalis Leontas','asthenis')");

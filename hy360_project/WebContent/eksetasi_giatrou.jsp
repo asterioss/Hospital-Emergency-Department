@@ -56,7 +56,7 @@ try {
 		System.out.println("Something gone wrong.");
 	}
 	rs.close();
-	stmt.close();
+	//stmt.close();
   
 %>
   <br><br><label for="diagnosis"><b>Diagnosis</b></label>
@@ -65,8 +65,10 @@ try {
     <option value="covid-19">Covid-19</option>
     <option value="covid-20">Covid-20</option>
     <option value="gastrederitida">Gastrederitida</option>
+    <option value="provlima_orasis">Provlima Orasis</option>
     <option value="gripi">Gripi</option>
     <option value="katagma">Katagma</option>
+    <option value="allergia">Allergia</option>
     <option value="kruologhma">Kruologhma</option>
   </select>
   
@@ -77,18 +79,24 @@ try {
     <option value="depon00">Depon (xapi)</option>
     <option value="depon01">Depon (siropi)</option>
     <option value="mesulid">Mesulid (xapi)</option>
+    <option value="prodiac">Prodiac (kapsoula)</option>
     <option value="ponstan00">Ponstan (xapi)</option>
     <option value="ponstan01">Ponstan (siropi)</option>
-    <option value="voltaren00">Voltaren (xapi)</option>
-    <option value="voltaren01">Voltaren (aloifi)</option>
+    <option value="artelac">Artelac (stagones)</option>
+    <option value="arichol">Arichol (xapi))</option>
+    <option value="bisolvon00">Bisolvon (xapi)</option>
+    <option value="bisolvon01">Bisolvon (siropi)</option>
     <option value="xanax">Xanax (xapi)</option>
+    <option value="xozal">Xozal (xapi)</option>
   </select>
+  
+  <input type="hidden" name="patient_name" value=<%=name%>>
   
   <button type="submit" class="eksetasibtn">Eksetasi apo nosileutiko</button>
 
 <script>
  function change_display() {
-   document.getElementById("farmaka").style.display = "block";
+     document.getElementById("farmaka").style.display = "block";
  }
 </script>
 </form>
@@ -98,26 +106,27 @@ try {
 <% 
   String diagnosi = (String)request.getParameter("diagnosis");
   String farmako = (String)request.getParameter("farmaka");
+  String arrayString[] = name.split("\\s+");   //split sting by space
+  String first_name = arrayString[0];
  
   create = con.prepareStatement("CREATE TABLE IF NOT EXISTS eksetasi_patient " +
          "(onomatepwnumo VARCHAR(255) not NULL, " +
+         " name VARCHAR(255) not NULL, " + 
          " diagnosis VARCHAR(255) DEFAULT NULL, " + 
          " farmakeutikh_agwgh VARCHAR(255) DEFAULT NULL, " + 
+         " anafora VARCHAR(255) not NULL, " + 
          " PRIMARY KEY ( onomatepwnumo ))");
   create.executeUpdate();
    //System.out.println(farmako);
- 
-  stmt = con.prepareStatement("insert into eksetasi_patient(onomatepwnumo) values(?)");
-  stmt.setString(1, name);
-  //stmt.setString(2, diagnosi);
-  //if(farmako!=null) stmt.setString(3, farmako);
   create.close();
  
+  stmt = con.prepareStatement("insert into eksetasi_patient(onomatepwnumo,name) values(?,?)");
+  stmt.setString(1, name);
+  stmt.setString(2, first_name);
+  //stmt.setString(2, diagnosi);
+  //if(farmako!=null) stmt.setString(3, farmako);
+ 
   stmt.executeUpdate();
-	
-   //response.sendRedirect("eksetasi_nosileutikou.jsp");
-   
-   //stmt.close();
  
  }
  catch(Exception e) {

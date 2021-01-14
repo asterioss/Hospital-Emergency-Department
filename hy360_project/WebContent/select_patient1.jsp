@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Epilogh Astheni</title>
+<title>Epilogh Eksetaszomenou</title>
 <style>
 select {
    padding: 14px 20px;
@@ -53,23 +53,21 @@ select {
 
     myStmt = con.createStatement();
 
-    myRs = myStmt.executeQuery("select * from dedomena_asthenwn");
+    myRs = myStmt.executeQuery("select * from eksetasi_patient");
 
-    out.println("Onomata asthenwn:");
+    out.println("Astheneis pou exoun eksetastei:");
     out.println("<br>");
     while (myRs.next()) {
 	   out.println(myRs.getString("onomatepwnumo"));
        out.println("<br>");
     }
-    myRs.close();
-
-    
+    myRs.close();   
 
 %>
 <br><label for="patient"><b>Write the patient's name</b></label>
   <input type="text" placeholder="Enter Patient's Name" name="patient" id="patient" required>
   
- <button type="submit" class="eksetbtn">Proxwra stin eksetasi</button>
+ <button type="submit" class="eksetbtn">Pame gia epanksetasi</button>
 
 </form>
 
@@ -78,15 +76,15 @@ select {
 
 <%
     String name = request.getParameter("patient");
-    pat = con.prepareStatement("select * from dedomena_asthenwn where onomatepwnumo = ?");
+    pat = con.prepareStatement("select * from eksetasi_patient where onomatepwnumo = ?");
     pat.setString(1, name);
     //System.out.println(name);
 
     myRs = pat.executeQuery();
     if(myRs.next()) {
        if(name!=null) {
-         //System.out.println(name);
-         response.sendRedirect("eksetasi_giatrou.jsp?name=" + name);
+         System.out.println(name);
+         response.sendRedirect("epaneksetasi.jsp?name=" + name);
        }
     } else {
        if(name!=null) {

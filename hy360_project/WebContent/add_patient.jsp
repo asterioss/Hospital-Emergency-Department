@@ -34,7 +34,7 @@
 </style>
 </head>
 <body>
-<form action="">
+<form action="add_patient.jsp" method="post">
  <h1 style="text-align:center;">Episkepsi Asthenous</h1>
  <a href="home_page.jsp">Home Page</a>
  <div class="container" style="padding:16px;">
@@ -53,9 +53,13 @@
  <label for="symptoms"><b>Choose a Symptom</b></label><br>
   <select name="symptoms" id="symptoms">
     <option value="ponokefalos">Ponokefalos</option>
-    <option value="pyretos">Pyretos</option>
+    <option value="pyretos">Puretos</option>
     <option value="ponolaimos">Ponolaimos</option>
     <option value="ponos">Ponos</option>
+    <option value="provima_sta_matia">Provlima sta matia</option>
+    <option value="ponos_stin_kardia">Ponos stin kardia</option>
+    <option value="allergies">Allergies</option>
+    <option value="ponokoilos">Ponokoilos</option>
   </select>
    
    <button type="submit" class="addbtn">Add Patient</button>
@@ -66,9 +70,11 @@
 </body>
 </html>    
 
-<% String fullname = request.getParameter("fullname");
+<%
+ String fullname = request.getParameter("fullname");
  String addr = request.getParameter("addr");
  String amkaa = request.getParameter("amka");
+// System.out.println(amkaa);
  String asff = request.getParameter("asf");
  String symptom = (String)request.getParameter("symptoms");
  
@@ -101,15 +107,13 @@
     } else {
     	System.out.println("Den uparxei o asthenis.");
     	
-    	insert = con.prepareStatement("insert into dedomena_asthenwn(amka,onomatepwnumo,dieuthinsi,asfalistikos_foreas,xronia_nosimata,plhrofories_prohgoumenwn_episkepsewn,symptoms)" +
-    	"values(?,?,?,?,?,?,?)");
+    	insert = con.prepareStatement("insert into dedomena_asthenwn(amka,onomatepwnumo,dieuthinsi,asfalistikos_foreas,symptoms)" +
+    	"values(?,?,?,?,?)");
     	insert.setString(1, amkaa);
     	insert.setString(2, fullname);
     	insert.setString(3, addr);
     	insert.setString(4, asff);
-    	insert.setString(5, "");
-    	insert.setString(6, "");
-    	insert.setString(7, symptom);
+    	insert.setString(5, symptom);
     	
     	insert.executeUpdate();
     	out.println("O asthenis "+fullname+" prostethike me epituxia.");
