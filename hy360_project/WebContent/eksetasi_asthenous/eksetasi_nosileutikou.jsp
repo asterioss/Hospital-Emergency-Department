@@ -55,7 +55,7 @@ try {
 	url + ":" + port + "/" + databaseName + "?characterEncoding=UTF-8", username, password);
 	
 	//kanoume update ton pinaka kai vazoume diagnosi kai farmaka
-	stmt = con.prepareStatement("update eksetasi_patient set diagnosis = ?, farmakeutikh_agwgh = ? where name = ?");
+	stmt = con.prepareStatement("update eksetazomenoi_astheneis set diagnosis = ?, farmakeutikh_agwgh = ? where name = ?");
 	stmt.setString(1, diagnosi);
 	if(farmako!=null) stmt.setString(2, farmako);
 	stmt.setString(3, name);

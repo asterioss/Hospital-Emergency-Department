@@ -48,7 +48,7 @@ try {
 	url + ":" + port + "/" + databaseName + "?characterEncoding=UTF-8", username, password);
 	
 	//update ton pinaka kai vazoume thn anafora
-	stmt = con.prepareStatement("update eksetasi_patient set anafora = ? where name = ?");
+	stmt = con.prepareStatement("update eksetazomenoi_astheneis set anafora = ? where name = ?");
 	stmt.setString(1, anafora);
 	stmt.setString(2, name);
 	

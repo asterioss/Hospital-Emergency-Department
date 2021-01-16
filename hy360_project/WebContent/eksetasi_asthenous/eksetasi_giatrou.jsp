@@ -130,7 +130,7 @@ try {
   <button type="button" class="farmakabtn" onclick="change_display()">Farmakeutikh Agwgh(proairetiko)</button>
   
   <select name="farmaka" id="farmaka" style="display:none;">
-    <option selected="">-- select an option --</option>
+    <option selected=""></option>
     <%rs = temp.executeQuery("select * from eksetaseis_kai_farmaka"); 
 	while (rs.next()) {%>
     <option value=<%=rs.getString("onoma_diathesimou_farmakou")%>><%=rs.getString("onoma_diathesimou_farmakou")%>(<%=rs.getString("tupos_farmakou")%>) katallilo gia: <%=rs.getString("katallilo_gia")%></option>
@@ -167,7 +167,7 @@ try {
   String arrayString[] = name.split("\\s+");   //split sting by space
   String first_name = arrayString[0];
  
-  create = con.prepareStatement("CREATE TABLE IF NOT EXISTS eksetasi_patient " +
+  create = con.prepareStatement("CREATE TABLE IF NOT EXISTS eksetazomenoi_astheneis " +
          "(onomatepwnumo VARCHAR(255) not NULL, " +
          " name VARCHAR(255) not NULL, " + 
          " diagnosis VARCHAR(255) DEFAULT NULL, " + 
@@ -178,7 +178,7 @@ try {
    //System.out.println(farmako);
   create.close();
  
-  stmt = con.prepareStatement("insert into eksetasi_patient(onomatepwnumo,name) values(?,?)");
+  stmt = con.prepareStatement("insert into eksetazomenoi_astheneis(onomatepwnumo,name) values(?,?)");
   stmt.setString(1, name);
   stmt.setString(2, first_name);
  

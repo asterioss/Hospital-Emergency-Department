@@ -25,7 +25,7 @@ button {
 </style>
 </head>
 <body>
-<h1>This is home page!</h1>
+<h1>Roufa ena kauli!</h1>
  <form action="episkepsi_asthenous/add_patient.jsp">
   <button type="submit" class="btn">Episkepsi Asthenous sto TEP</button>
  </form>
@@ -36,6 +36,10 @@ button {
  
  <form action="epaneksetasi_asthenous/select_patient1.jsp">
   <button type="submit" class="btn">Epaneksetasi Asthenous</button>
+ </form>
+ 
+ <form action="erwthseis/questions.jsp">
+  <button type="submit" class="btn">Erwthseis</button>
  </form>
  
  <form action="index.html">
@@ -82,6 +86,16 @@ button {
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Aggelos Rosmarakis','giatros','orthopedikos',1231231231)");
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Nikos Nitis','nosileutis',' ',1231231231)");
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Giorgos Vamvakousis','giatros','genikos',1231231231)");
+	
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Rousos','giatros','kardiologos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Dicaprio','giatros','ofthalmiatros',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiria Koula','nosileutis',' ',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Lentzos','upallilos',' ',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Toutou','giatros','allergiologos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Mathiou','giatros','gastrenterologos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Rosmarakis','giatros','orthopedikos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Nitis','nosileutis',' ',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Vamvakousis','giatros','genikos',1231231231)");
 			
 	
 	 //4. Process the result set

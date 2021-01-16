@@ -43,7 +43,7 @@ try {
 	
 	String name = request.getParameter("name");
 	//System.out.println("Name: "+name);
-	stmt = con.prepareStatement("select * from eksetasi_patient where onomatepwnumo = ?");
+	stmt = con.prepareStatement("select * from eksetazomenoi_astheneis where onomatepwnumo = ?");
 	stmt.setString(1, name);
 	
     rs = stmt.executeQuery();

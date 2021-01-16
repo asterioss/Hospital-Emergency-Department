@@ -53,7 +53,7 @@ select {
 
     myStmt = con.createStatement();
 
-    myRs = myStmt.executeQuery("select * from eksetasi_patient");
+    myRs = myStmt.executeQuery("select * from eksetazomenoi_astheneis");
 
     out.println("Astheneis pou exoun eksetastei:");
     out.println("<br>");
@@ -76,7 +76,7 @@ select {
 
 <%
     String name = request.getParameter("patient");
-    pat = con.prepareStatement("select * from eksetasi_patient where onomatepwnumo = ?");
+    pat = con.prepareStatement("select * from eksetazomenoi_astheneis where onomatepwnumo = ?");
     pat.setString(1, name);
     //System.out.println(name);
 
