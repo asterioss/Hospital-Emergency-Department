@@ -57,6 +57,9 @@ try {
 	   else {
 		  out.println(" kai tou xorigithike: " + rs.getString("farmakeutikh_agwgh")); 
 	   }
+	   out.println("<br>");
+	   out.println("<br>");
+	   out.println("H anafora apo to nosileutiko htan: " +rs.getString("anafora"));
 	}
 	else {
 		System.out.println("Something gone wrong.");

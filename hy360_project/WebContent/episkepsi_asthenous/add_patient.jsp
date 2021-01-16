@@ -50,7 +50,7 @@
  <label for="asf_for"><b>Asfalistikos Foreas</b></label>
    <input type="text" placeholder="Enter Asfalistiko Forea" name="asf" id="asf" required>
    
- <label for="nosimata"><b>Asfalistikos Foreas</b></label>
+ <label for="nosimata"><b>Xronia Nosimata</b></label>
    <input type="text" placeholder="Enter Xronia Nosimata (if you have)" name="xr_nos" id="xr_nos">
    
  <label for="symptoms"><b>Choose a Symptom</b></label><br>
@@ -79,7 +79,7 @@
  String amkaa = request.getParameter("amka");
 // System.out.println(amkaa);
  String asff = request.getParameter("asf");
- String nosimata = " ";
+ String nosimata = "";
  if(request.getParameter("xr_nos")!=null) {
 	nosimata = request.getParameter("xr_nos");
  }

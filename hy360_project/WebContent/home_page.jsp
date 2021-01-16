@@ -123,8 +123,8 @@ button {
 	
 	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (12312312,'Giorgos Giorgou','Kentro','efka','epilipsia','23/12/2020-phre farmakeutikh agwgh','ponokefalos')");
 	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (31231231,'Mixalis Leontas','Therisos','oga','diavitis','12/11/2020-programmatismeno checkup','ponolaimos')");
-	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (53523123,'Kostas Konstantinou','Amnisos','ika',' ','11/04/2020-eksetasi sta epeigonta-phre agwgh','puretos')");
-	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (57234543,'Makis Leontas','Kentro','ika',' ','19/04/2020-eksetasi sta epeigonta-aplo kruologhma','puretos')");
+	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (53523123,'Kostas Konstantinou','Amnisos','ika','','11/04/2020-eksetasi sta epeigonta-phre agwgh','puretos')");
+	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (57234543,'Makis Leontas','Kentro','ika','','19/04/2020-eksetasi sta epeigonta-aplo kruologhma','puretos')");
 	temp.executeUpdate("INSERT INTO dedomena_asthenwn " + "VALUES (12347536,'Tasos Magkas','Kentro','ika','kardiaki aneparkeia','12/01/2021-miniaio checkup-agwgh paramenei idia','ponos')");
 	
 	

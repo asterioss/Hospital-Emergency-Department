@@ -25,6 +25,8 @@
 </style>
 </head>
 <body>
+<form action="answer.jsp" method="post">
+ <a href="../home_page.jsp">Home Page</a><br><br>
  <label for="erwthseis"><b>Erwthseis</b></label>
  <select name="questions" id="questions">
     <option value="katastasi_episkepsewn">Katastasi episkepsewn sto telos ths efimerias</option>
@@ -33,7 +35,8 @@
     <option value="melh_proswpikou">Pote ergasthke to kathe melos</option>
  </select>
  
- <button type="submit" class="btn">Choose a question</button>
+ <button type="submit" class="btn">Check the answer</button>
  
+</form>
 </body>
 </html>
