@@ -4,19 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../as2.css">
 <meta charset="ISO-8859-1">
 <title>Eksetasi Nosileutikou</title>
 <style>
  body {font-family: Arial, Helvetica, sans-serif;}
- button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
- }
 </style>
 </head>
 <body>

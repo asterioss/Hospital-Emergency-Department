@@ -5,31 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../as2.css">
 <meta charset="UTF-8">
 <title>Epilogh Astheni</title>
 <style>
-select {
-   padding: 14px 20px;
-   margin: 8px 0;
-   width: 100%;
- }
- button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
- }
- input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
- }
+body {font-family: Arial, Helvetica, sans-serif;}
 </style>
 </head>
 <body>
@@ -56,6 +36,7 @@ select {
     myRs = myStmt.executeQuery("select * from dedomena_asthenwn");
 
     out.println("Onomata asthenwn:");
+    out.println("<br>");
     out.println("<br>");
     while (myRs.next()) {
 	   out.println(myRs.getString("onomatepwnumo"));
@@ -90,7 +71,7 @@ select {
        }
     } else {
        if(name!=null) {
-         out.println("Akuro onoma.");
+         out.println("Lathos onoma.");
        }
     }
     myRs.close();

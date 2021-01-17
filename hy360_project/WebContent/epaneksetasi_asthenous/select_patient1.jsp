@@ -5,31 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../as2.css">
 <meta charset="UTF-8">
 <title>Epilogh Eksetaszomenou</title>
 <style>
-select {
-   padding: 14px 20px;
-   margin: 8px 0;
-   width: 100%;
- }
- button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
- }
- input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
- }
+ body {font-family: Arial, Helvetica, sans-serif;}
 </style>
 </head>
 <body>
@@ -42,21 +22,25 @@ select {
  String username = new String("root");
  String password = new String("");
  Connection con = null;
+ //Statement temp = null;
  Statement myStmt = null;
  PreparedStatement pat = null;
  ResultSet myRs = null;
+ //ResultSet rs = null;
 
  try {
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	con = DriverManager.getConnection(
-	url + ":" + port + "/" + databaseName + "?characterEncoding=UTF-8", username, password);
-
+	url + ":" + port + "/" + databaseName + "?characterEncoding=UTF-8", username, password);	
+	
     myStmt = con.createStatement();
 
     myRs = myStmt.executeQuery("select * from eksetazomenoi_astheneis");
 
     out.println("Astheneis pou exoun eksetastei:");
     out.println("<br>");
+    out.println("<br>");
+    //if(myRs.next()==false) out.println("Kanenas auth th stigmh.");
     while (myRs.next()) {
 	   out.println(myRs.getString("onomatepwnumo"));
        out.println("<br>");

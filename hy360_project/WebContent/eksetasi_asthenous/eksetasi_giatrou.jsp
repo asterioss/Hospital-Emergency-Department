@@ -4,24 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../as2.css">
 <meta charset="ISO-8859-1">
 <title>Eksetasi apo Giatro</title>
 <style>
  body {font-family: Arial, Helvetica, sans-serif;}
- select {
-   padding: 14px 20px;
-   margin: 8px 0;
-   width: 100%;
- }
- button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
- }
 </style>
 </head>
 <body>
@@ -54,7 +41,7 @@ try {
 	String symptom = "";
 	
 	if(rs.next()) {
-	   out.println("O asthenis " +name+ " eisilthe sto TEP me symptomata: " + rs.getString("symptoms"));
+	   out.println("O asthenis " +name+ " eisilthe sto TEP me symptomata: " + rs.getString("symptoms")+".");
 	   out.println("<br>");
 	   symptom = rs.getString("symptoms");
 	}
@@ -63,7 +50,7 @@ try {
 	}
 	rs.close();
 	stmt.close();
-	//System.out.println(symptom);
+	System.out.println(symptom);
 	
 	
 	String eidik = "";
@@ -88,7 +75,7 @@ try {
     	eidik = "gastrenterologos";
 	}
     else {
-    	System.out.println("Den uparxei sugkekrimenos giatros");
+    	System.out.println("Den uparxei sugkekrimenos giatros.");
     }
 	//System.out.println(eidik);
 	stmt = con.prepareStatement("select * from dedomena_prosopikou where ekseidikikeusi = ?");
@@ -98,7 +85,7 @@ try {
 	
 	if(rs.next()) {
 	   out.println("<br>");
-	   out.println("O katallilos giatros einai o "+rs.getString("onomatepwnumo")+" me eidikeusi: "+rs.getString("ekseidikikeusi"));
+	   out.println("O katallilos giatros einai o "+rs.getString("onomatepwnumo")+" me eidikeusi: "+rs.getString("ekseidikikeusi")+".");
 	}
 	else {
 		System.out.println("Something gone wrong.");
@@ -183,6 +170,7 @@ try {
   stmt.setString(2, first_name);
  
   stmt.executeUpdate();
+  stmt.close();
  
  }
  catch(Exception e) {

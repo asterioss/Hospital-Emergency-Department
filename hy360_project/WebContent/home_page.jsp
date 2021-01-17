@@ -4,28 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="as2.css">
 <meta charset="ISO-8859-1">
 <title>Home Page</title>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
-h1 {text-align:center;}
-button {
-  background-color: black;
-  color: white;
-  padding: 4px 10px;
-  margin: 5px 0;
-  border: none;
-  cursor: pointer;
-  width: 20%;
- }
- .logoutbtn {
-   position:absolute;
-   top:80%;
- }
 </style>
 </head>
 <body>
-<h1>Roufa ena kauli!</h1>
+<h1>TEP</h1>
  <form action="episkepsi_asthenous/add_patient.jsp">
   <button type="submit" class="btn">Episkepsi Asthenous sto TEP</button>
  </form>
@@ -36,6 +23,10 @@ button {
  
  <form action="epaneksetasi_asthenous/select_patient1.jsp">
   <button type="submit" class="btn">Epaneksetasi Asthenous</button>
+ </form>
+ 
+ <form action="efhmeries/programma_efhmerias.jsp">
+  <button type="submit" class="btn">Emfanish Efhmeriwn</button>
  </form>
  
  <form action="erwthseis/questions.jsp">
@@ -84,18 +75,18 @@ button {
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Mixalis Toutou','giatros','allergiologos',1231231231)");
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Kwstas Mathiou','giatros','gastrenterologos',1231231231)");
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Aggelos Rosmarakis','giatros','orthopedikos',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Nikos Nitis','nosileutis',' ',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Marios Nitis','nosileutis',' ',1231231231)");
 	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Giorgos Vamvakousis','giatros','genikos',1231231231)");
 	
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Rousos','giatros','kardiologos',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Dicaprio','giatros','ofthalmiatros',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiria Koula','nosileutis',' ',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Lentzos','upallilos',' ',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Toutou','giatros','allergiologos',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Mathiou','giatros','gastrenterologos',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Rosmarakis','giatros','orthopedikos',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Nitis','nosileutis',' ',1231231231)");
-	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Vamvakousis','giatros','genikos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vladimiros Rousounelos','giatros','kardiologos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Periandros Kotas','giatros','ofthalmiatros',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Tasia Koula','nosileutis',' ',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Sofronis Antoniou','upallilos',' ',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Allec Greco','giatros','allergiologos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Rio Patatas','giatros','gastrenterologos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Petros Peikos','giatros','orthopedikos',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Vicky Katsouni','nosileutis',' ',1231231231)");
+	temp.executeUpdate("INSERT INTO dedomena_prosopikou " + "VALUES ('Triandros Vam','giatros','genikos',1231231231)");
 			
 	
 	 //4. Process the result set
@@ -146,7 +137,7 @@ button {
                "arithmos_diathesimwn_dioikitikou_proswpikou INTEGER not NULL, " +
                " PRIMARY KEY ( arithmos_diathesimwn_giatrwn ))");
 	
-	temp.executeUpdate("INSERT INTO dedomena_efimerias " + "VALUES (4,10,12)");
+	temp.executeUpdate("INSERT INTO dedomena_efimerias " + "VALUES (6,2,1)");
 	
 	/*myRs = myStmt.executeQuery("select * from dedomena_efimerias");
 	System.out.println("\n"+ 
@@ -226,8 +217,19 @@ button {
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Mixalis Toutou','proswpiko')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Kwstas Mathiou','proswpiko')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Aggelos Rosmarakis','proswpiko')");
-	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Nikos Nitis','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Marios Nitis','proswpiko')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Giorgos Vamvakousis','proswpiko')");
+	
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Vladimiros Rousounelos','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Periandros Kotas','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Tasia Koula','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Sofronis Antoniou','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Allec Greco','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Rio Patatas','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Petros Peikos','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Vicky Katsouni','proswpiko')");
+	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Triandros Vam','proswpiko')");
+	
 	
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Giorgos Giorgou','asthenis')");
 	temp.executeUpdate("INSERT INTO xristes_pliroforiakou_susthmatos " + "VALUES ('Mixalis Leontas','asthenis')");

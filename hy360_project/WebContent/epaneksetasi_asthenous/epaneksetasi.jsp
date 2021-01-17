@@ -4,24 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../as2.css">
 <meta charset="ISO-8859-1">
 <title>Epaneksetasi Asthenous</title>
 <style>
  body {font-family: Arial, Helvetica, sans-serif;}
- button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
- }
- select {
-   padding: 14px 20px;
-   margin: 8px 0;
-   width: 100%;
- }
 </style>
 </head>
 <body>
@@ -52,14 +39,16 @@ try {
 	   out.println("O asthenis " +name+ " diagnosthike me: " + rs.getString("diagnosis"));
 	   //System.out.println(rs.getString("farmakeutikh_agwgh"));
 	   if(rs.getString("farmakeutikh_agwgh").equals("")) {
-		  out.println(" kai den tou xorigithike tipota"); 
+		  out.println(" kai den tou xorigithike tipota."); 
 	   }
 	   else {
-		  out.println(" kai tou xorigithike: " + rs.getString("farmakeutikh_agwgh")); 
+		  out.println(" kai tou xorigithike: " + rs.getString("farmakeutikh_agwgh")+"."); 
 	   }
 	   out.println("<br>");
 	   out.println("<br>");
-	   out.println("H anafora apo to nosileutiko htan: " +rs.getString("anafora"));
+	   
+	   if(rs.getString("farmakeutikh_agwgh").equals("")) out.println("Den eixe anafora apo to nosileutiko.");
+	   else out.println("H anafora apo to nosileutiko htan: " +rs.getString("anafora"));
 	}
 	else {
 		System.out.println("Something gone wrong.");

@@ -1,33 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="as2.css">
 <meta charset="UTF-8">
 <title>Registration</title>
 <style>
- body {font-family: Arial, Helvetica, sans-serif;}
- input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
- }
- button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 10px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
- }
+ body { font-family: Arial, Helvetica, sans-serif;}
 </style>
 </head>
 <body>
  <form action="register.jsp" method="post">
  <h1 style="text-align:center">Register</h1>
- <p style="font-size:15px">Please fill in this form to create an account.</p>
+ <p style="font-size:15px; text-align:center">Please fill in this form to create an account.</p>
  
  <div class="container" style="padding:16px;">
  <label for="email"><b>Email</b></label>
@@ -42,7 +26,9 @@
  <button type="submit" class="registerbtn">Register</button>
  </div>
  
- <br><a style="align:center" href="login.jsp">Do you have an account??</a>
+ <div style="text-align:center">
+   <br><a href="login.jsp">Do you have an account??</a>
+ </div>
  </form>
 
 </body>

@@ -4,19 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../as2.css">
 <meta charset="ISO-8859-1">
 <title>Oloklirwsh nosileias</title>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
- }
 </style>
 </head>
 <body>
@@ -26,14 +18,16 @@ String nosileia = (String)request.getParameter("nosileia");
 String name = (String)request.getParameter("patient_name");
 //System.out.println(name+", "+nosileia);
 if(nosileia.equals("nai")) {
-	out.println("O asthenis "+name+" tha nosileutei");
+	out.println("O asthenis "+name+" tha nosileutei.");
+	out.println("<br>");
 }
 else if(nosileia.equals("oxi")) {
-	out.println("O asthenis "+name+" pernei poulo gia to spiti tou");
+	out.println("O asthenis "+name+" phgainei sto spiti tou.");
+	out.println("<br>");
 } 
 %>
 
-  <button type="submit" class="hometbtn">Go to Home Page</button>
+  <br><button type="submit" class="hometbtn">Go to Home Page</button>
   
 </form>
 </body>
@@ -67,6 +61,7 @@ try {
          " dieuthinsi VARCHAR(255) not NULL, " + 
          " asfalistikos_foreas VARCHAR(255) not NULL, " + 
          " xronia_nosimata VARCHAR(255) not NULL, " +
+         " symptoms VARCHAR(255) not NULL, " +
          " PRIMARY KEY ( onomatepwnumo ))");
     create.executeUpdate();
     create.close();
@@ -97,30 +92,22 @@ try {
 	String address = "";
 	String asf_for = "";
 	String nosimata = "";
+	String symptom = "";
 	if (myRs.next()) {
 		amka = myRs.getString("amka");
 		address = myRs.getString("dieuthinsi");
 		asf_for = myRs.getString("asfalistikos_foreas");
 		nosimata = myRs.getString("xronia_nosimata");
+		symptom = myRs.getString("symptoms");
 	}
 	myRs.close();
 	stmt.close();
 	
-	//diagrafh astheni apo ton pinaka dedomena_asthenwn
-	stmt = con.prepareStatement("delete from dedomena_asthenwn where onomatepwnumo = ?");
-	stmt.setString(1, fullname);
-	stmt.executeUpdate();
-	
-	//diagrafh astheni apo ton pinaka dedomena_asthenwn
-	stmt = con.prepareStatement("delete from eksetazomenoi_astheneis where onomatepwnumo = ?");
-	stmt.setString(1, fullname);
-	stmt.executeUpdate();
-	
 	//an einai na nosileutei, ton kanoume insert sto table nosileuomenoi_astheneis
 	if(nosileia.equals("nai")) {
 		//System.out.println("ekei");
-		insert = con.prepareStatement("insert into nosileuomenoi_astheneis(onomatepwnumo,amka,diagnosis,farmakeutikh_agwgh,dieuthinsi,asfalistikos_foreas,xronia_nosimata)" +
-		"values(?,?,?,?,?,?,?)");
+		insert = con.prepareStatement("insert into nosileuomenoi_astheneis(onomatepwnumo,amka,diagnosis,farmakeutikh_agwgh,dieuthinsi,asfalistikos_foreas,xronia_nosimata,symptoms)" +
+		"values(?,?,?,?,?,?,?,?)");
 		 insert.setString(1, fullname);
 		 insert.setString(2, amka);
 		 insert.setString(3, diagnosis);
@@ -128,6 +115,7 @@ try {
 		 insert.setString(5, address);
 		 insert.setString(6, asf_for);
 		 insert.setString(7, nosimata);
+		 insert.setString(8, symptom);
 		 //insert.setString(6, symptom);
 		    	
 		 insert.executeUpdate();
@@ -135,6 +123,16 @@ try {
 		 //response.sendRedirect("add_patient.html");
 		 insert.close();
 	}
+	
+	//diagrafh astheni apo ton pinaka dedomena_asthenwn
+	stmt = con.prepareStatement("delete from dedomena_asthenwn where onomatepwnumo = ?");
+	stmt.setString(1, fullname);
+	stmt.executeUpdate();
+		
+	//diagrafh astheni apo ton pinaka dedomena_asthenwn
+	stmt = con.prepareStatement("delete from eksetazomenoi_astheneis where onomatepwnumo = ?");
+	stmt.setString(1, fullname);
+	stmt.executeUpdate();
     
 	//System.out.println(fullname);
 		

@@ -5,38 +5,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../as2.css">
 <meta charset="ISO-8859-1">
 <title>Episkepsi Asthenous</title>
 <style>
  body {font-family: Arial, Helvetica, sans-serif;}
- input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
- }
- button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
- }
- select {
-   padding: 14px 20px;
-   margin: 8px 0;
-   width: 100%;
- }
 </style>
 </head>
 <body>
 <form action="add_patient.jsp" method="post">
  <h1 style="text-align:center;">Episkepsi Asthenous</h1>
- <a href="../home_page.jsp">Home Page</a>
+ <div style="text-align:center">
+   <a href="../home_page.jsp">Home Page</a>
+ </div>
  <div class="container" style="padding:16px;">
  <label for="fullname"><b>Username</b></label>
    <input type="text" placeholder="Enter Fullname" name="fullname" id="fullname" required>
@@ -59,7 +40,7 @@
     <option value="puretos">Puretos</option>
     <option value="ponolaimos">Ponolaimos</option>
     <option value="ponos">Ponos</option>
-    <option value="provima_sta_matia">Provlima sta matia</option>
+    <option value="provlima_sta_matia">Provlima sta matia</option>
     <option value="ponos_stin_kardia">Ponos stin kardia</option>
     <option value="allergies">Allergies</option>
     <option value="ponokoilos">Ponokoilos</option>
@@ -91,8 +72,10 @@
  String username = new String("root");
  String password = new String("");
  Connection con = null;
+ //Statement temp = null;
  PreparedStatement stmt = null;
  PreparedStatement insert = null;
+ //PreparedStatement create = null;
  ResultSet rs = null;
 
  try {
@@ -129,6 +112,16 @@
     	insert.close();
     	
     }
+	
+	/*create = con.prepareStatement("CREATE TABLE IF NOT EXISTS statistika_efhmerias " +
+            "(arithmos_peristatikwn INTEGER DEFAULT NULL, " +
+            " astheneies VARCHAR(255) DEFAULT NULL, " + 
+            " farmaka VARCHAR(255) DEFAULT NULL, " + 
+            " PRIMARY KEY ( arithmos_peristatikwn ))");
+    create.executeUpdate();
+    create.close();
+    
+    temp = con.createStatement();*/
 	
  }
  catch(Exception e) {
