@@ -5,31 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../as2.css">
 <meta charset="UTF-8">
 <title>Epilogh Astheni</title>
 <style>
-select {
-   padding: 14px 20px;
-   margin: 8px 0;
-   width: 100%;
- }
- button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
- }
- input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
- }
+body {font-family: Arial, Helvetica, sans-serif;}
 </style>
 </head>
 <body>
@@ -55,11 +35,11 @@ select {
 
     myRs = myStmt.executeQuery("select * from dedomena_asthenwn");
 
-    out.println("dedomena_asthenwn(amka,onomatepwnumo,dieuthinsi,asfalistikos_foreas,xronia_nosimata,plhrofories_prohgoumenwn_episkepsewn)");
+    out.println("Onomata asthenwn:");
+    out.println("<br>");
     out.println("<br>");
     while (myRs.next()) {
-	   if(myRs.getString("xronia_nosimata").equals(" ")) out.println(myRs.getString("amka") +" | "+myRs.getString("onomatepwnumo") +" | "+ myRs.getString("dieuthinsi") +": "+ myRs.getString("asfalistikos_foreas")+" | "+myRs.getString("plhrofories_prohgoumenwn_episkepsewn"));
-	   else out.println(myRs.getString("amka") +" | "+myRs.getString("onomatepwnumo") +" | "+ myRs.getString("dieuthinsi") +": "+ myRs.getString("asfalistikos_foreas")+" | "+myRs.getString("xronia_nosimata")+" | "+myRs.getString("plhrofories_prohgoumenwn_episkepsewn"));
+	   out.println(myRs.getString("onomatepwnumo"));
        out.println("<br>");
     }
     myRs.close();
@@ -86,12 +66,12 @@ select {
     myRs = pat.executeQuery();
     if(myRs.next()) {
        if(name!=null) {
-         System.out.println(name);
-         response.sendRedirect("eksetasi.jsp?name=" + name);
+         //System.out.println(name);
+         response.sendRedirect("eksetasi_giatrou.jsp?name=" + name);
        }
     } else {
        if(name!=null) {
-         out.println("Akuro onoma.");
+         out.println("Lathos onoma.");
        }
     }
     myRs.close();
